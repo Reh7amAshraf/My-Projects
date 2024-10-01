@@ -1,140 +1,323 @@
-/* General Styles */ 
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #000;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #eacf4f;
+  border-radius: 5rem;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+  background: url(Images/picture6.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+section {
+  padding: 20rem 9%;
 }
 
-/* Header Styles */
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #fff;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  background: no-repeat;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+}
+
+.btn:hover {
+  color: #000;
+  background: #fff;
+}
+
 .header {
-    background-color: #006241; /* Starbucks green */
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #000;
+  padding: 3rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center; /* Center the items in the navbar */
-    align-items: center;
-    width: 100%; /* Ensure navbar takes full width */
+.header .icons {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fff;
 }
 
-.logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 20px; /* Space between logo and links */
+.header .icons:hover {
+  color: #eacf4f;
 }
 
-.nav-links {
-    list-style-type: none;
-    display: flex; /* Use flexbox for nav links */
+.header #menu-btn {
+  display: none;
 }
 
-.nav-links li {
-    display: inline-block;
-    margin-left: 20px;
+.header .navbar a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 2rem;
 }
 
-.nav-links a {
-    color: white;
-    font-size: 16px;
+.header .navbar a:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  color: #eacf4f;
 }
 
-/* Hero Section Styles */
-.hero {
-    background-image: url('Images/picture6.jpg'); /* Path to your background image */
-    background-size: cover;  /* Ensures the image covers the entire section */
-    background-position: center;  /* Centers the image */
-    height: 120vh;  /* Set the height of the section */
-    display: flex;
-    justify-content: flex-start; /* Align items to the left */
-    align-items: center; /* Center items vertically */
-    padding: 0 20px; /* Optional: Add padding for spacing */
-    color: white; /* Makes the text white for readability */
+.header .navbar .space {
+  display: inline-block;
+  width: 16rem;
 }
 
-.hero-text {
-    text-align: left; /* Align text to the left */
-    padding: 20px;
-    border-radius: 10px;
+.header .logo {
+  position: absolute;
+  top: 3rem;
+  left: 48.5%;
+  transform: translateX(-50%);
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+.header .logo img {
+  width: 8rem;
+  height: 8rem;         /* Set the height equal to the width for a square */
+  border-radius: 50%;   /* Make the image circular */
+  object-fit: cover;    /* Ensure the image covers the circle without distortion */
 }
 
-.hero-text p {
-    font-size: 20px;
-    margin-bottom: 20px;
+.header .search-form {
+  height: 7rem;
+  padding: 0 2rem;
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  background: #000;
+  position: absolute;
+  top: 99%;
+  left: 0;
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
-.cta-button {
-    background-color: #006241;
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.header .search-form.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.cta-button:hover {
-    background-color: #004f31;
+.header .search-form input {
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 1.6rem;
+  color: #fff;
 }
 
-/* Featured Products Section */
-.featured-products {
-    padding: 40px;
-    background-color: white;
-    text-align: center;
+.header .fa-times {
+  transform: rotate(180deg);
 }
 
-.featured-products h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+.home {
+  margin-top: 7rem;
+  background: url(../Images/picture6.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.products {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+.home .content {
+  max-width: 70rem;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.product img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
+.home .content img {
+  width: 100%;
 }
 
-.product p {
-    margin-top: 10px;
-    font-size: 18px;
+.home .content h3 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #fff;
 }
 
-/* Footer Styles */
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.home .content p {
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #aaa;
+  padding: 2rem 0;
 }
 
-.logo img {
-    width: 80px;  /* Adjust the size of the logo */
-    height: 80px; /* Ensure height and width are equal for a perfect circle */
-    border-radius: 50%; /* Makes the image a circle */
-    object-fit: cover; /* Ensures the image fits within the circle */
+.service {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+
+.service .box {
+  text-align: center;
+  padding: 2rem;
+}
+
+.service .box i {
+  height: 7rem;
+  width: 7rem;
+  line-height: 7rem;
+  font-size: 2.5rem;
+  color: #000;
+  background: #eacf4f;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.service .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.service .box p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+
+.menu .box-container .box {
+  text-align: center;
+}
+
+.menu .box-container .box:hover img {
+  transform: translateY(1rem);
+}
+
+.menu .box-container .box img {
+  height: 15rem;          /* Set a smaller height */
+  width: 15rem;           /* Set the width equal to height for a square */
+  border-radius: 50%;     /* Make the image circular */
+  object-fit: cover;      /* Ensure the image fills the circular shape without distortion */
+}
+
+.menu .box-container .box .content {
+  padding: 1rem 0;
+}
+
+.menu .box-container .box .content .stars {
+  margin-bottom: 2rem;
+}
+
+.menu .box-container .box .content .stars i {
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+.menu .box-container .box .content h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.menu .box-container .box .content .price {
+  font-size: 2rem;
+  line-height: 2;
+  color: #aaa;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.about .image {
+  flex: 1 1 40rem;
+}
+
+.about .image img {
+  width: 100%;
+}
+
+.about .content {
+  flex: 1 1 40rem;
+}
+
+.about .content .title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.about .content p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+  padding: 2rem 0;
+}
+
+.about .content .icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.about .content .icons h3 {
+  flex: 1 1 16rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.about .content .icons h3 i {
+  padding-right: .5rem;
+  color: #eacf4f;
 }
